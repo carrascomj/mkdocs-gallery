@@ -1,0 +1,29 @@
+[project]
+name = "mkdocs-gallery"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "carrascomj", email = "carrascomurielj@gmail.com" }
+]
+dependencies = [
+    "mkdocs>=1.6.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mkdocs_gallery"]
+
+[project.entry-points."mkdocs.plugins"]
+mkdocs-gallery = "mkdocs_gallery:Plugin"
